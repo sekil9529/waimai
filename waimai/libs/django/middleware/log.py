@@ -67,7 +67,7 @@ def get_log_config(base_dir: str, version: int = 1, is_pro: bool = False):
             'all': {
                 'level': 'DEBUG',
                 'class': 'logging.handlers.RotatingFileHandler',
-                'filename': os.path.join(log_dir, 'all.logs'),
+                'filename': os.path.join(log_dir, 'all.log'),
                 'mode': 'w+',
                 'maxBytes': 1024 * 1024 * 5,  # 5 MB
                 'backupCount': 5,
@@ -78,7 +78,7 @@ def get_log_config(base_dir: str, version: int = 1, is_pro: bool = False):
             'error': {
                 'level': 'ERROR',
                 'class': 'logging.handlers.RotatingFileHandler',
-                'filename': os.path.join(log_dir, 'error.logs'),
+                'filename': os.path.join(log_dir, 'error.log'),
                 'mode': 'w+',
                 'maxBytes': 1024 * 1024 * 5,  # 5 MB
                 'backupCount': 5,
