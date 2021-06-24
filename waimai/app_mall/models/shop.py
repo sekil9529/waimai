@@ -30,6 +30,13 @@ class Shop(models.Model):
     create_time = models.DateTimeField(verbose_name='创建时间', null=False, default=datetime.datetime.now)
     update_time = models.DateTimeField(verbose_name='更新时间', null=False, default=datetime.datetime.now)
 
+    @property
+    def month_sales(self):
+        """月销量"""
+        date_1th = get_date_1th_of_current_month()
+        obj = ShopSales.objects.filter(is_deleted=0, shop_id=self.id, date_1=date_1th).first()
+        return obj.sales if obj else 0
+
 
 class ShopSales(models.Model):
 
