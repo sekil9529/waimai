@@ -43,6 +43,8 @@ def get_log_config(base_dir: str, version: int = 1, is_pro: bool = False):
     :return: dict
     """
     log_dir = os.path.join(base_dir, 'logs')
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
     handlers = ['all', 'error'] if is_pro else ['console']
     config = {
         'version': version,

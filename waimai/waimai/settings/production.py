@@ -11,6 +11,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS += [
+    'app_user',
     'app_mall',
 ]
 

@@ -15,7 +15,8 @@ ALLOWED_HOSTS = ['*']
 # app
 INSTALLED_APPS += [
     'rest_framework',
-    'app_mall'
+    'app_user',
+    'app_mall',
 ]
 
 # 中间件

@@ -1,3 +1,7 @@
 # coding: utf-8
 
-from .shop import *
+from .shops import *
+from .items import *
+from .comments import *
+
+
