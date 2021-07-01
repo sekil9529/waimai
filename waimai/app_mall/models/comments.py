@@ -87,8 +87,8 @@ class ShopCommentDetails(models.Model):
         verbose_name = '店铺评论详情表'
 
     id = models.BigAutoField(primary_key=True)
-    shop_comment = models.ForeignKey('ShopComment', to_field='shop_comment_id', verbose_name='店铺评论id', null=False,
-                                     on_delete=models.CASCADE, db_constraint=False, unique=True)
+    shop_comment = models.OneToOneField(to='ShopComment', to_field='shop_comment_id', verbose_name='店铺评论id', null=False,
+                                        on_delete=models.CASCADE, db_constraint=False)
     image_list = JSONField(verbose_name='评论图片列表', null=True)
     at_item_id_list = JSONField(verbose_name='at商品id列表', null=True)
     content = models.CharField(verbose_name='评论内容', max_length=2000, null=True)
