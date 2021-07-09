@@ -16,10 +16,40 @@ class FixedCharField(models.Field):
         return 'char(%s)' % self.max_length
 
 
+class BinaryFixCharField(models.Field):
+    """char binary 类型"""
+
+    description = _("Char Binary")
+
+    def db_type(self, connection):
+        return 'char(%s) binary' % self.max_length
+
+
+class BinaryCharFiled(models.Field):
+    """varchar binary类型"""
+
+    description = _('Varchar Binary')
+
+    def db_type(self, connection):
+        return 'varchar(%s) binary' % self.max_length
+
+
+class TextField(models.TextField):
+    """text类型"""
+
+    description = _('Text')
+
+    def db_type(self, connection):
+        return 'text'
+
+
+LongTextField = models.TextField
+
+
 class TinyIntField(models.IntegerField):
     """tinyint类型"""
 
-    description = _("Tiny (1 byte) integer")
+    description = _('Tiny (1 byte) integer')
     MAX_TINYINT = 127
 
     def formfield(self, **kwargs):

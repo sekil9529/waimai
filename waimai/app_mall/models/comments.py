@@ -4,7 +4,7 @@
 
 import datetime
 from django.db import models
-from jsonfield import JSONField
+from django_jsonfield_backport.models import JSONField
 from collections import defaultdict
 
 from .items import Item
